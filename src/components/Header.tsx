@@ -4,7 +4,11 @@ import { Link } from "gatsby";
 
 import theme from "../theme";
 
-const Header = ({ siteTitle }) => (
+interface HeaderProps {
+  siteTitle: string;
+}
+
+const Header = (props: HeaderProps) => (
   <header
     style={{
       background: theme.brand_color,
@@ -26,7 +30,7 @@ const Header = ({ siteTitle }) => (
             textDecoration: `none`,
           }}
         >
-          {siteTitle}
+          {props.siteTitle}
         </Link>
       </h1>
     </div>
