@@ -1,8 +1,8 @@
-import * as React from "react"
+import * as React from "react";
 
-import { Link } from "gatsby"
+import { Link } from "gatsby";
 
-import theme from "../theme"
+import theme from "../theme";
 
 const Header = ({ siteTitle }) => (
   <header
@@ -31,6 +31,6 @@ const Header = ({ siteTitle }) => (
       </h1>
     </div>
   </header>
-)
+);
 
-export default Header
+export default Header;
