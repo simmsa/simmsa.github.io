@@ -1,11 +1,14 @@
 import { graphql, StaticQuery } from "gatsby";
 import * as React from "react";
+import Helmet from "react-helmet";
 
 import "./base.css";
 import Header from "./Header";
+import SEO from "./Seo";
 
 interface LayoutProps {
   children: React.ReactNode;
+  title?: string;
 }
 
 const Layout = (props: LayoutProps) => (
@@ -21,6 +24,7 @@ const Layout = (props: LayoutProps) => (
     `}
     render={(data) => (
       <>
+        <SEO title={props.title || data.site.siteMetadata.title} />
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
           style={{

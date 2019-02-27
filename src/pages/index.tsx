@@ -4,7 +4,6 @@ import * as React from "react";
 import Image from "../components/Image";
 import Layout from "../components/Layout";
 import MyCenterImage from "../components/MyCenterImage";
-import SEO from "../components/Seo";
 
 import Me from "../images/Andrew-Simms.jpg";
 
@@ -33,24 +32,21 @@ const Description = (props: DescriptionProps) => (
 );
 
 const IndexPage = () => (
-  <>
-    <SEO title="Test" />
-    <Layout>
-      <h1 style={{ ...headerStyle, width: "100%", textAlign: "center" }}>
-        Hello, I'm Andrew.
-      </h1>
-      <MyCenterImage path={Me} />
-      <Description>
-        I am a programmer, photographer, guitar player, and maker currently
-        living in Golden, Colorado.
-      </Description>
-      <p>No go build something great.</p>
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image />
-      </div>
-      <Link to="/page-2/">Go to page 2</Link>
-    </Layout>
-  </>
+  <Layout>
+    <h1 style={{ ...headerStyle, width: "100%", textAlign: "center" }}>
+      Hello, I'm Andrew.
+    </h1>
+    <MyCenterImage path={Me} />
+    <Description>
+      I am a programmer, photographer, guitar player, and maker currently living
+      in Golden, Colorado.
+    </Description>
+    <p>No go build something great.</p>
+    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+      <Image />
+    </div>
+    <Link to="/page-2/">Go to page 2</Link>
+  </Layout>
 );
 
 export default IndexPage;
