@@ -1,6 +1,7 @@
 import { graphql, StaticQuery } from "gatsby";
-import Img from "gatsby-image";
 import * as React from "react";
+
+import Image from "react-bootstrap/Image";
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -16,13 +17,17 @@ import * as React from "react";
 export interface MyImageProps {
   path: any;
   altText?: string;
+  rounded?: boolean;
+  circle?: boolean;
 }
 
 const MyImage = (props: MyImageProps) => (
-  <img
+  <Image
     src={props.path}
     alt={props.altText || ""}
     style={{ maxWidth: "200px", margin: 0, padding: 0 }}
+    rounded={props.rounded}
+    roundedCircle={props.circle}
   />
 );
 export default MyImage;
