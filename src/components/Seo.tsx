@@ -27,16 +27,16 @@ interface SEOMetadata {
   title: string;
 }
 
-function SEO(metadata: SEOMetadata) {
+const SEO = (props: SEOMetadata) => {
   return (
     <StaticQuery
       query={detailsQuery}
       render={(data) => {
         const metaDescription =
-          metadata.description || data.site.siteMetadata.description;
+          props.description || data.site.siteMetadata.description;
 
-        const keywords = metadata.keywords ? metadata.keywords.join(", ") : "";
-        const otherMeta = metadata.meta;
+        const keywords = props.keywords ? props.keywords.join(", ") : "";
+        const otherMeta = props.meta;
         const additionalMeta: Meta[] = [];
 
         if (keywords.length > 0) {
@@ -50,9 +50,9 @@ function SEO(metadata: SEOMetadata) {
         return (
           <Helmet
             htmlAttributes={{
-              lang: metadata.lang,
+              lang: props.lang,
             }}
-            title={metadata.title}
+            title={props.title}
             titleTemplate={`%s | ${data.site.siteMetadata.title}`}
             meta={[
               {
@@ -60,7 +60,7 @@ function SEO(metadata: SEOMetadata) {
                 name: `description`,
               },
               {
-                content: metadata.title,
+                content: props.title,
                 property: `og:title`,
               },
               {
@@ -80,7 +80,7 @@ function SEO(metadata: SEOMetadata) {
                 name: `twitter:creator`,
               },
               {
-                content: metadata.title,
+                content: props.title,
                 name: `twitter:title`,
               },
               {
@@ -93,6 +93,6 @@ function SEO(metadata: SEOMetadata) {
       }}
     />
   );
-}
+};
 
 export default SEO;
