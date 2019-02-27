@@ -2,7 +2,10 @@
   "compilerOptions": {
     "jsx": "React",
     "strict": true,
-    "outDir": "build"
+    "outDir": "build",
+    "forceConsistentCasingInFileNames": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
