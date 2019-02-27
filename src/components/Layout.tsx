@@ -1,9 +1,8 @@
 import { graphql, StaticQuery } from "gatsby";
 import * as React from "react";
-// import { ReactNode } from "react";
 
-import Header from "./header";
-import "./layout.css";
+import "./base.css";
+import Header from "./Header";
 
 interface LayoutProps {
   children: React.ReactNode;
