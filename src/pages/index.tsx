@@ -1,7 +1,5 @@
-import { Link } from "gatsby";
 import * as React from "react";
 
-import Image from "../components/Image";
 import Layout from "../components/Layout";
 import MyCenterImage from "../components/MyCenterImage";
 
@@ -36,16 +34,11 @@ const IndexPage = () => (
     <h1 style={{ ...headerStyle, width: "100%", textAlign: "center" }}>
       Hello, I'm Andrew.
     </h1>
-    <MyCenterImage path={Me} />
+    <MyCenterImage path={Me} circle={true} />
     <Description>
       I am a programmer, photographer, guitar player, and maker currently living
       in Golden, Colorado.
     </Description>
-    <p>No go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 );
 
